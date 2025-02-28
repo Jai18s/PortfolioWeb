@@ -1,0 +1,233 @@
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+/* Live Gradient Background */
+/* Live Gradient Background */
+body {
+    background: linear-gradient(-45deg, #2d1ed0, #140f22, #0f408f, #add8e6);
+    background-size: 400% 400%;
+    animation: gradient 10s ease infinite;
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+/* General Section Styling */
+.section {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out, box-shadow 0.6s ease;
+    position: relative;
+    padding: 2rem;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 8px;
+    margin: 2rem auto;
+    width: 80%;
+    z-index: 1;
+    backdrop-filter: blur(5px);
+    will-change: opacity, transform;
+
+    /* Layered Box Shadows */
+    box-shadow: 
+        0 4px 8px rgba(0, 0, 0, 0.1),  /* Light shadow */
+        0 8px 16px rgba(0, 0, 0, 0.2), /* Medium shadow */
+        0 12px 24px rgba(0, 0, 0, 0.3);/* Deep shadow */
+}
+
+/* Pop-up Animation for Active Section */
+.section.active {
+    opacity: 1;
+    transform: translateY(0);
+    z-index: 2;
+    backdrop-filter: blur(0);
+    box-shadow: 
+        0 6px 12px rgba(0, 0, 0, 0.2), 
+        0 12px 24px rgba(0, 0, 0, 0.3),
+        0 18px 36px rgba(0, 0, 0, 0.4); /* Stronger shadow for active section */
+}
+
+/* Hover Effect */
+.section:hover {
+    transform: translateY(-10px);
+    box-shadow: 
+        0 10px 20px rgba(0, 0, 0, 0.3),
+        0 20px 40px rgba(0, 0, 0, 0.4),
+        0 30px 60px rgba(0, 0, 0, 0.5); /* Strongest shadow on hover */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+
+
+
+
+
+
+/* Header */
+header {
+    background-color: #333;
+    color: white;
+    padding: 1rem;
+    text-align: center;
+}
+.education-table th,
+.education-table td {
+    padding: 12px 15px;
+    text-align: center;
+    border: 1px solid #000000;
+}
+
+.education-table thead {
+    background: #007bff;
+    color: #fff;
+}
+.abt{
+    text-align: center;
+}
+.skll{
+    text-align: center;
+}
+.prj{
+    text-align: center;
+}
+.cnt{
+    text-align: center;
+}
+.edu{
+    text-align: center;
+}
+
+
+
+.education-table tbody tr:hover {
+    background: #f1f1f1;
+    cursor: pointer;
+}
+
+  .profile-pic {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 3px solid rgb(0, 0, 0);
+    display: block;
+    margin: 0 auto 20px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+/* Main Content */
+main {
+    padding: 2rem;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+section {
+    margin-bottom: 2rem;
+}
+
+h2 {
+    color: #333;
+    margin-bottom: 1rem;
+    text-decoration: underline;
+}
+
+p {
+    margin-bottom: 1rem;
+}
+
+
+/* Projects */
+article {
+    border: 1px solid #000000;
+    padding: 1rem;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+}
+
+article h3 {
+    margin-bottom: 0.5rem;
+}
+
+article a {
+    color: #0066cc;
+    text-decoration: none;
+}
+
+/* Contact Form */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    border: #000000;
+}
+
+label {
+    font-weight: bold;
+}
+
+input, textarea {
+    padding: 0.5rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+button {
+    padding: 0.5rem;
+    border: none;
+    border-radius: 4px;
+    background-color: #333;
+    color: white;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #555;
+}
+
+/* Footer */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+/* Pop-up Keyframes */
+@keyframes popUp {
+    0% {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
