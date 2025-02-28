@@ -277,3 +277,61 @@ footer {
         width: 85%;
     }
 }
+
+/* Responsive Table Styles */
+@media (max-width: 600px) {
+    /* Make the section container fully responsive */
+    .section {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch; /* Smooth scrolling for iOS */
+    }
+
+    /* Table Responsiveness */
+    .education-table {
+        width: 100%;
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+        border-collapse: collapse;
+    }
+
+    .education-table thead {
+        display: table;
+        width: 100%;
+    }
+
+    .education-table tbody {
+        display: block;
+        width: 100%;
+    }
+
+    .education-table th,
+    .education-table td {
+        padding: 8px 5px;
+        font-size: 0.85rem;
+        text-align: left;
+        min-width: 120px; /* Ensures each column has enough space */
+        box-sizing: border-box;
+    }
+
+    .education-table tr {
+        display: table;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    /* Make the table scrollable */
+    .education-table {
+        overflow-x: auto;
+    }
+
+    .education-table::-webkit-scrollbar {
+        height: 6px;
+    }
+
+    .education-table::-webkit-scrollbar-thumb {
+        background: #ccc;
+        border-radius: 3px;
+    }
+}
+
