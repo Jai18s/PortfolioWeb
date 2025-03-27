@@ -5,7 +5,7 @@
     box-sizing: border-box;
     font-family: Arial, sans-serif;
 }
-/* Live Gradient Background */
+
 /* Live Gradient Background */
 body {
     background: linear-gradient(-45deg, #2d1ed0, #140f22, #0f408f, #add8e6);
@@ -14,16 +14,23 @@ body {
 }
 
 @keyframes gradient {
-    0% {
-        background-position: 0% 50%;
-    }
-    50% {
-        background-position: 100% 50%;
-    }
-    100% {
-        background-position: 0% 50%;
-    }
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
 }
+
+/* Typewriter Effect */
+.typewriter-text {
+    font-size: 2rem;
+    font-weight: bold;
+    color: white;
+    overflow: hidden;
+    white-space: nowrap;
+    display: inline-block;
+    border-right: 3px solid white;
+    padding-right: 5px;
+}
+
 /* General Section Styling */
 .section {
     opacity: 0;
@@ -39,14 +46,12 @@ body {
     backdrop-filter: blur(5px);
     will-change: opacity, transform;
 
-    /* Layered Box Shadows */
     box-shadow: 
-        0 4px 8px rgba(0, 0, 0, 0.1),  /* Light shadow */
-        0 8px 16px rgba(0, 0, 0, 0.2), /* Medium shadow */
-        0 12px 24px rgba(0, 0, 0, 0.3);/* Deep shadow */
+        0 4px 8px rgba(0, 0, 0, 0.1),
+        0 8px 16px rgba(0, 0, 0, 0.2),
+        0 12px 24px rgba(0, 0, 0, 0.3);
 }
 
-/* Pop-up Animation for Active Section */
 .section.active {
     opacity: 1;
     transform: translateY(0);
@@ -55,24 +60,17 @@ body {
     box-shadow: 
         0 6px 12px rgba(0, 0, 0, 0.2), 
         0 12px 24px rgba(0, 0, 0, 0.3),
-        0 18px 36px rgba(0, 0, 0, 0.4); /* Stronger shadow for active section */
+        0 18px 36px rgba(0, 0, 0, 0.4);
 }
 
-/* Hover Effect */
 .section:hover {
     transform: translateY(-10px);
     box-shadow: 
         0 10px 20px rgba(0, 0, 0, 0.3),
         0 20px 40px rgba(0, 0, 0, 0.4),
-        0 30px 60px rgba(0, 0, 0, 0.5); /* Strongest shadow on hover */
+        0 30px 60px rgba(0, 0, 0, 0.5);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-
-
-
-
-
-
 
 /* Header */
 header {
@@ -81,6 +79,8 @@ header {
     padding: 1rem;
     text-align: center;
 }
+
+/* Education Table */
 .education-table th,
 .education-table td {
     padding: 12px 15px;
@@ -92,30 +92,19 @@ header {
     background: #007bff;
     color: #fff;
 }
-.abt{
-    text-align: center;
-}
-.skll{
-    text-align: center;
-}
-.prj{
-    text-align: center;
-}
-.cnt{
-    text-align: center;
-}
-.edu{
-    text-align: center;
-}
-
-
 
 .education-table tbody tr:hover {
     background: #f1f1f1;
     cursor: pointer;
 }
 
-  .profile-pic {
+/* Section Titles */
+.abt, .skll, .prj, .cnt, .edu {
+    text-align: center;
+}
+
+/* Profile Picture */
+.profile-pic {
     width: 150px;
     height: 150px;
     border-radius: 50%;
@@ -124,6 +113,7 @@ header {
     margin: 0 auto 20px;
 }
 
+/* Navigation */
 nav ul {
     list-style: none;
     display: flex;
@@ -140,7 +130,7 @@ nav a:hover {
     text-decoration: underline;
 }
 
-/* Main Content */
+/* Main */
 main {
     padding: 2rem;
     max-width: 800px;
@@ -161,13 +151,13 @@ p {
     margin-bottom: 1rem;
 }
 
-
 /* Projects */
 article {
     border: 1px solid #000000;
     padding: 1rem;
     border-radius: 8px;
     margin-bottom: 1rem;
+    
 }
 
 article h3 {
@@ -220,14 +210,50 @@ footer {
     bottom: 0;
     width: 100%;
 }
-/* Pop-up Keyframes */
-@keyframes popUp {
-    0% {
-        opacity: 0;
-        transform: translateY(50px);
+
+/* Mobile */
+@media (max-width: 600px) {
+    nav ul {
+        flex-direction: column;
+        gap: 0.5rem;
     }
-    100% {
-        opacity: 1;
-        transform: translateY(0);
+
+    header h1 {
+        font-size: 1.5rem;
+    }
+
+    .section {
+        width: 90%;
+        padding: 1rem;
+    }
+
+    .profile-pic {
+        width: 100px;
+        height: 100px;
+    }
+
+    .education-table, .education-table th, .education-table td {
+        font-size: 0.8rem;
+    }
+
+    input, textarea, button {
+        width: 100%;
+    }
+
+    footer {
+        position: relative;
+    }
+}
+
+/* Tablet */
+@media (min-width: 601px) and (max-width: 1024px) {
+    nav ul {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+    }
+
+    .section {
+        width: 85%;
     }
 }
